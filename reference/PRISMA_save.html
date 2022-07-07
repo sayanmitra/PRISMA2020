@@ -18,7 +18,7 @@ working directory."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/aj
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">PRISMA2020</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0.0</span>
       </span>
     </div>
 
@@ -46,45 +46,58 @@ working directory.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">PRISMA_save</span><span class="op">(</span>
-  <span class="va">plotobj</span>,
-  filename <span class="op">=</span> <span class="st">"PRISMA2020_flowdiagram.html"</span>,
-  filetype <span class="op">=</span> <span class="cn">NA</span>,
-  overwrite <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">PRISMA_save</span><span class="op">(</span></span>
+<span>  <span class="va">plotobj</span>,</span>
+<span>  filename <span class="op">=</span> <span class="st">"PRISMA2020_flowdiagram.html"</span>,</span>
+<span>  filetype <span class="op">=</span> <span class="cn">NA</span>,</span>
+<span>  overwrite <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>plotobj</dt>
 <dd><p>A plot produced using <code><a href="PRISMA_flowdiagram.html">PRISMA_flowdiagram()</a></code>.</p></dd>
+
+
 <dt>filename</dt>
 <dd><p>The filename to save (including extension)</p></dd>
+
+
 <dt>filetype</dt>
-<dd><p>The filetype to save the plot in, supports: HTML, ZIP, PDF, PNG, SVG, PS and WEBP
+<dd><p>The filetype to save the plot in, supports:
+HTML, ZIP, PDF, PNG, SVG, PS and WEBP
 (if NA, the filetype will be calculated out based on the file extension)
 HTML files maintain hyperlinks and tooltips
-The ZIP option creates an archive containing the HTML file, and supporting javascript and css files in an adjacent folder, instead of embedded base64 within the HTML file</p></dd>
+The ZIP option creates an archive containing the HTML file,
+alongside supporting javascript and css files in an adjacent folder,
+instead of embedded base64 within the HTML file</p></dd>
+
+
 <dt>overwrite</dt>
 <dd><p>if TRUE, will overwrite an existing file</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>the absolute filename of the saved diagram plot.</p>
+    
+
+<p>the absolute filename of the saved diagram plot.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">csvFile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"PRISMA.csv"</span>, package <span class="op">=</span> <span class="st">"PRISMA2020"</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="va">csvFile</span><span class="op">)</span>;</span>
-<span class="r-in"><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="PRISMA_data.html">PRISMA_data</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>;</span>
-<span class="r-in"><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="PRISMA_flowdiagram.html">PRISMA_flowdiagram</a></span><span class="op">(</span><span class="va">data</span>,</span>
-<span class="r-in">                fontsize <span class="op">=</span> <span class="fl">12</span>,</span>
-<span class="r-in">                interactive <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span class="r-in">                previous <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span class="r-in">                other <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>;</span>
-<span class="r-in"><span class="fu">PRISMA_save</span><span class="op">(</span><span class="va">plot</span>, filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span>, filetype<span class="op">=</span><span class="st">"html"</span><span class="op">)</span>;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/private/var/folders/24/8k48jl6d249_n_qfxwsl6xvm0000gn/T/Rtmp2v1p5B/file82653d8dc9c"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">csvFile</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"PRISMA.csv"</span>, package <span class="op">=</span> <span class="st">"PRISMA2020"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="va">csvFile</span><span class="op">)</span>;</span></span>
+<span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="PRISMA_data.html">PRISMA_data</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span>;</span></span>
+<span class="r-in"><span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="PRISMA_flowdiagram.html">PRISMA_flowdiagram</a></span><span class="op">(</span><span class="va">data</span>,</span></span>
+<span class="r-in"><span>                fontsize <span class="op">=</span> <span class="fl">12</span>,</span></span>
+<span class="r-in"><span>                interactive <span class="op">=</span> <span class="cn">TRUE</span>,</span></span>
+<span class="r-in"><span>                previous <span class="op">=</span> <span class="cn">FALSE</span>,</span></span>
+<span class="r-in"><span>                other <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>;</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>1.5</span>
+<span class="r-in"><span><span class="fu">PRISMA_save</span><span class="op">(</span><span class="va">plot</span>, filename <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span>, filetype<span class="op">=</span><span class="st">"html"</span><span class="op">)</span>;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "/tmp/Rtmp6W2aCd/filedbc347bdb591"</span>
 </code></pre></div>
     </div>
   </div>
@@ -99,7 +112,7 @@ The ZIP option creates an archive containing the HTML file, and supporting javas
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>
